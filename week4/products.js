@@ -62,12 +62,12 @@ const app = createApp({
 
     //   axios[http](url, { data: this.temp })
     //     .then((response) => {
-    //       //跳出彈窗
+    //跳出彈窗
     //       alert(response.data.message);
     //       productModal.hide();
     //       this.getData();
     //     })
-    //     //失敗
+    //失敗
     //     .catch((err) => {
     //       alert(err.response.data.message);
     //     });
@@ -98,13 +98,13 @@ const app = createApp({
 
     //   axios
     //     .delete(url)
-    //     // 成功
+    // 成功
     //     .then((response) => {
     //       alert(response.data.message);
     //       delProductModal.hide();
     //       this.getData();
     //     })
-    //     // 失敗
+    // 失敗
     //     .catch((err) => {
     //       alert(err.response.data.message);
     //     });
