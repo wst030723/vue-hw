@@ -29,7 +29,7 @@ createApp({
           // 失敗 顯示錯誤訊息並跳回登入頁面
           .catch((err) => {
             alert(err.response.data.message);
-            window.location = "login.html";
+            window.location = "index.html";
           });
       },
       getData() {
