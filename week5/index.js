@@ -89,25 +89,6 @@ const app = Vue.createApp({
           alert(err.response.data.message);
         });
     },
-    updateCart(data) {
-      this.loadingStatus.loadingItem = data.id;
-      const url = `${apiUrl}/api/${apiPath}/cart/${data.id}`;
-      const cart = {
-        product_id: data.product_id,
-        qty: data.qty,
-      };
-      axios
-        .put(url, { data: cart })
-        .then((response) => {
-          alert(response.data.message);
-          this.loadingStatus.loadingItem = "";
-          this.getCart();
-        })
-        .catch((err) => {
-          alert(err.response.data.message);
-          this.loadingStatus.loadingItem = "";
-        });
-    },
     deleteAllCarts() {
       const url = `${apiUrl}/api/${apiPath}/carts`;
       axios

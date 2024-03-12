@@ -113,8 +113,8 @@
               </tr>
             </thead>
             <tbody>
-              <template v-if="cart.carts">
-                <tr v-for="item in cart.carts" :key="item.id">
+              <template v-if="carts">
+                <tr v-for="item in carts" :key="item.id">
                   <td>
                     <button
                       type="button"
@@ -129,37 +129,6 @@
                       x
                     </button>
                   </td>
-                  <td>
-                    {{ item.product.title }}
-                    <div class="text-success" v-if="item.coupon">
-                      已套用優惠券
-                    </div>
-                  </td>
-                  <td>
-                    <div class="input-group input-group-sm">
-                      <div class="input-group mb-3">
-                        <input
-                          v-model.number="item.qty"
-                          @blur="updateCart(item)"
-                          :disabled="loadingStatus.loadingItem === item.id"
-                          min="1"
-                          type="number"
-                          class="form-control"
-                        />
-                        <span class="input-group-text" id="basic-addon2"
-                          >{{ item.product.unit }}</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-                  <td class="text-end">
-                    <small
-                      v-if="cart.final_total !== cart.total"
-                      class="text-success"
-                      >折扣價：</small
-                    >
-                    {{ item.final_total }}
-                  </td>
                 </tr>
               </template>
             </tbody>
@@ -167,10 +136,6 @@
               <tr>
                 <td colspan="3" class="text-end">總計</td>
                 <td class="text-end">{{ cart.total }}</td>
-              </tr>
-              <tr v-if="cart.final_total !== cart.total">
-                <td colspan="3" class="text-end text-success">折扣價</td>
-                <td class="text-end text-success">{{ cart.final_total }}</td>
               </tr>
             </tfoot>
           </table>
@@ -336,6 +301,6 @@
     <script src="https://unpkg.com/@vee-validate/i18n@4.1.0"></script>
     <script src="https://unpkg.com/@vee-validate/rules"></script>
 
-    <script src="11.js" type="module"></script>
+    <script src="index.js" type="module"></script>
   </body>
 </html>
