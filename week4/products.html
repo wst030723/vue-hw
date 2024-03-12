@@ -94,7 +94,6 @@
     <script type="text/x-template" id="pagination">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <!-- 前一頁 -->
           <li
             class="page-item"
             :class="{'disabled': pages.current_page === 1}"
@@ -125,7 +124,6 @@
               @click.prevent="emitPages(item)"
             >{{ item }}</a>
           </li>
-          <!-- 下一頁 -->
           <li
             class="page-item"
             :class="{'disabled': pages.current_page === pages.total_pages}"

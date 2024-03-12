@@ -101,27 +101,28 @@ app.component("productModal", {
   template: "#productModal",
   props: ["product", "isNew"],
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     updateProduct() {
       // 新增商品
       let api = `${apiUrl}/api/${apiPath}/admin/product`;
-      let httpMethod = 'post';
+      let httpMethod = "post";
       // 當不是新增商品時則切換成編輯商品 API
       if (!this.isNew) {
         api = `${apiUrl}/api/${apiPath}/admin/product/${this.product.id}`;
-        httpMethod = 'put';
+        httpMethod = "put";
       }
 
-      axios[httpMethod](api, { data: this.product }).then((response) => {
-        alert(response.data.message);
-        this.hideModal();
-        this.$emit('update');
-      }).catch((err) => {
-        alert(err.response.data.message);
-      });
+      axios[httpMethod](api, { data: this.product })
+        .then((response) => {
+          alert(response.data.message);
+          this.hideModal();
+          this.$emit("update");
+        })
+        .catch((err) => {
+          alert(err.response.data.message);
+        });
     },
     createImages() {
       this.product.imagesUrl = [];
@@ -136,10 +137,13 @@ app.component("productModal", {
   },
 
   mounted() {
-    productModal = new bootstrap.Modal(document.getElementById('productModal'), {
-      keyboard: false,
-      backdrop: 'static'
-    });
+    productModal = new bootstrap.Modal(
+      document.getElementById("productModal"),
+      {
+        keyboard: false,
+        backdrop: "static",
+      }
+    );
   },
 });
 
@@ -148,8 +152,7 @@ app.component("delProductModal", {
   template: "#delProductModal",
   props: ["item"],
   data() {
-    return {
-    };
+    return {};
   },
   mounted() {
     delProductModal = new bootstrap.Modal(
@@ -162,13 +165,15 @@ app.component("delProductModal", {
   },
   methods: {
     delProduct() {
-      axios.delete(`${apiUrl}/api/${apiPath}/admin/product/${this.item.id}`)
-      .then((response) => {
-        this.hideModal();
-        this.$emit('update');
-      }).catch((err) => {
-        alert(err.response.data.message);
-      });
+      axios
+        .delete(`${apiUrl}/api/${apiPath}/admin/product/${this.item.id}`)
+        .then((response) => {
+          this.hideModal();
+          this.$emit("update");
+        })
+        .catch((err) => {
+          alert(err.response.data.message);
+        });
     },
     openModal() {
       delProductModal.show();
