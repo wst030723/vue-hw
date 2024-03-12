@@ -89,6 +89,7 @@ const app = Vue.createApp({
           alert(err.response.data.message);
         });
     },
+    // 清空購物車
     deleteAllCarts() {
       const url = `${apiUrl}/api/${apiPath}/carts`;
       axios
@@ -126,6 +127,7 @@ const app = Vue.createApp({
           alert(err.response.data.message);
         });
     },
+    // 送出訂單
     createOrder() {
       const url = `${apiUrl}/api/${apiPath}/order`;
       const order = this.form;
