@@ -102,9 +102,9 @@
           </div>
           <div class="col-6">
             <a
-              href="./checkout.html"
               class="text-nowrap btn btn-dark w-100 py-2"
-              >Lorem ipsum</a
+              @click.prevent="addToCart(product.id)"
+              >加入購物車</a
             >
           </div>
         </div>
@@ -220,6 +220,9 @@
 
 <script>
 import axios from "axios";
+import { mapActions } from "pinia";
+
+import cartStore from "@/stores/cartStore";
 
 const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 
@@ -239,9 +242,23 @@ export default {
           this.product = res.data.product;
         });
     },
+    ...mapActions(cartStore, ["addToCart"]),
+    // addToCart(id) {
+    //   const order = {
+    //     product_id: id,
+    //     qty: 1,
+    //   };
+    //   axios
+    //     .post(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart`, { data: order })
+    //     .then((res) => {
+    //       console.log(res);
+    //       // this.product = res.data.product;
+    //     });
+    // },
   },
   mounted() {
     this.getProduct();
+    console.log(this.$route);
   },
 };
 </script>

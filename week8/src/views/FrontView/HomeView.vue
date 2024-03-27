@@ -7,9 +7,9 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-image: url(https://images.unsplash.com/photo-1480399129128-2066acb5009e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+        background-image: url(https://images.unsplash.com/photo-1606768666853-403c90a981ad?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
         background-position: center center;
-        opacity: 0.1;
+        opacity: 0.5;
       "
     ></div>
     <div class="container d-flex flex-column" style="min-height: 100vh">
@@ -20,7 +20,6 @@
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod.
           </p>
-          <button class="btn btn-dark rounded-0 mt-6">Lorem ipsum.</button>
         </div>
       </div>
     </div>
