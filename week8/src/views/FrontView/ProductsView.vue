@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
+  <div>
+    <!-- banner -->
     <div
       class="position-relative d-flex align-items-center justify-content-center"
-      style="min-height: 400px"
+      style="min-height: 300px"
     >
       <div
         class="position-absolute"
@@ -11,69 +12,46 @@
           bottom: 0;
           left: 0;
           right: 0;
-          background-image: url(https://images.unsplash.com/photo-1508624217470-5ef0f947d8be?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          background-image: url(https://plus.unsplash.com/premium_photo-1664970900025-1e3099ca757a?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
           background-position: center center;
-          opacity: 0.3;
+          opacity: 0.8;
         "
       ></div>
-      <h2 class="fw-bold">產品介紹</h2>
+      <h2 style="color: #673220; position: relative; z-index: 1">產品介紹</h2>
     </div>
-    <div class="container mt-md-5 mt-3 mb-7">
-      <div class="row">
-        <div class="col-md-4">
-          <div
-            class="accordion border border-bottom border-top-0 border-start-0 border-end-0 mb-3"
-            id="accordionExample"
-          >
-            <div class="card border-0">
-              <div
-                class="card-header px-0 py-4 bg-white border border-bottom-0 border-top border-start-0 border-end-0 rounded-0"
-                id="headingOne"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-              >
-                <div
-                  class="d-flex justify-content-between align-items-center pe-1"
-                >
-                  <h4 class="mb-0">所有商品</h4>
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-              </div>
+
+    <div class="container">
+      <div class="container mt-md-5 mb-7">
+        <div class="grid">
+          <div class="accordion mb-3" id="accordionExample">
+            <div class="card border-0" style="background-color: transparent">
               <div
                 id="collapseOne"
-                class="collapse show"
                 aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample"
               >
-                <div class="card-body py-0">
-                  <ul class="list-unstyled">
-                    <li>
-                      <RouterLink
-                        class="py-2 d-block text-muted"
-                        :to="`/products`"
-                        >全部</RouterLink
-                      >
-                    </li>
+                <ul class="list-unstyled d-flex justify-content-center">
+                  <li class="me-4">
+                    <RouterLink :to="`/products`" class="li-item"
+                      >全部</RouterLink
+                    >
+                  </li>
 
-                    <li v-for="item in categories" :key="item">
-                      <RouterLink
-                        class="py-2 d-block text-muted"
-                        :to="`/products?category=${item}`"
-                        >{{ item }}</RouterLink
-                      >
-                    </li>
-                  </ul>
-                </div>
+                  <li v-for="item in categories" :key="item" class="me-4">
+                    <RouterLink
+                      :to="`/products?category=${item}`"
+                      class="li-item"
+                      >{{ item }}</RouterLink
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-8">
+
           <div class="row">
-            <div class="col-md-6" v-for="product in products" :key="product.id">
-              <div
-                class="card border-0 mb-4 position-relative position-relative"
-              >
+            <div class="col-md-4" v-for="product in products" :key="product.id">
+              <div class="card border-0 mb-4 position-relative">
                 <img
                   :src="product.imageUrl"
                   class="card-img-top rounded-0"
@@ -87,15 +65,20 @@
                     style="right: 16px; top: 16px"
                   ></i>
                 </a>
-                <div class="card-body p-0">
-                  <h4 class="mb-0 mt-3">
-                    <RouterLink :to="`/product/${product.id}`">{{
-                      product.title
-                    }}</RouterLink>
+                <div class="card-body p-0" style="background-color: #f2f1ed">
+                  <h4 class="mb-0 mt-3" style="text-align: center">
+                    <RouterLink
+                      :to="`/product/${product.id}`"
+                      style="text-decoration: none; color: #673220"
+                      >{{ product.title }}</RouterLink
+                    >
                   </h4>
-                  <p class="card-text mb-0">
+                  <p
+                    class="card-text my-1"
+                    style="text-align: center; font-size: 18px"
+                  >
                     NT${{ product.price }}
-                    <span class="text-muted"
+                    <span class="text-muted" style="font-size: 14px"
                       ><del>NT${{ product.origin_price }}</del></span
                     >
                   </p>
@@ -104,25 +87,6 @@
               </div>
             </div>
           </div>
-          <nav class="d-flex justify-content-center">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </div>
@@ -138,7 +102,7 @@ export default {
   data() {
     return {
       products: [],
-      categories: ["國內", "國外"],
+      categories: ["咖啡", "冷萃", "甜點"],
     };
   },
   watch: {
@@ -172,3 +136,18 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.li-item {
+  color: #a1a1aa;
+  font-size: 20px;
+  text-decoration: none;
+}
+.li-item:focus {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 1px;
+  color: #673220;
+  text-shadow: 0px 4px 4.8px rgba(0, 0, 0, 0.25);
+}
+</style>

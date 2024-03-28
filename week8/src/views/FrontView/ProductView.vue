@@ -1,6 +1,42 @@
 <template>
-  <div class="container">
-    <div class="row align-items-center">
+  <!-- banner -->
+  <div
+    class="position-relative d-flex align-items-center justify-content-center"
+    style="min-height: 300px"
+  >
+    <div
+      class="position-absolute"
+      style="
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(https://images.unsplash.com/photo-1612195325284-c16da65be55d?q=80&w=2957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-position: center center;
+        opacity: 0.8;
+      "
+    ></div>
+    <h2 style="color: #673220; position: relative; z-index: 1">產品介紹</h2>
+  </div>
+
+  <div class="container mt-5">
+    <ol class="breadcrumb px-0 mb-0 py-3">
+      <li class="breadcrumb-item">
+        <RouterLink class="text-muted" to="/">首頁</RouterLink>
+      </li>
+      <li class="breadcrumb-item">
+        <RouterLink class="text-muted" to="/products">產品列表</RouterLink>
+      </li>
+      <li
+        class="breadcrumb-item active"
+        aria-current="page"
+        style="color: #673220"
+      >
+        {{ product.title }}
+      </li>
+    </ol>
+
+    <div class="row">
       <div class="col-md-7">
         <div
           id="carouselExampleControls"
@@ -9,62 +45,15 @@
         >
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img
-                src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.unsplash.com/photo-1502743780242-f10d2ce370f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1916&q=80"
-                class="d-block w-100"
-                alt="..."
-              />
+              <img :src="product.imageUrl" class="d-block w-100" alt="..." />
             </div>
           </div>
-          <a
-            class="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
       </div>
+
       <div class="col-md-5">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-white px-0 mb-0 py-3">
-            <li class="breadcrumb-item">
-              <a class="text-muted" href="./index.html">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a class="text-muted" href="./product.html">Product</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              {{ product.title }}
-            </li>
-          </ol>
-        </nav>
         <h2 class="fw-bold h1 mb-1">{{ product.title }}</h2>
+        <p class="pt-4">{{ product.description }}</p>
         <p class="mb-0 text-muted text-end">
           <del>NT${{ product.origin_price }}</del>
         </p>
@@ -111,109 +100,9 @@
       </div>
     </div>
     <div class="row my-5">
-      <div class="col-md-4">
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et
-        </p>
-      </div>
-      <div class="col-md-3">
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor
-        </p>
-      </div>
-    </div>
-    <h3 class="fw-bold">Lorem ipsum dolor sit amet</h3>
-    <div class="swiper-container mt-4 mb-5">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card border-0 mb-4 position-relative position-relative">
-            <img
-              src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              class="card-img-top rounded-0"
-              alt="..."
-            />
-            <a href="#" class="text-dark"> </a>
-            <div class="card-body p-0">
-              <h4 class="mb-0 mt-3"><a href="#">Lorem ipsum</a></h4>
-              <p class="card-text mb-0">
-                NT$1,080 <span class="text-muted"><del>NT$1,200</del></span>
-              </p>
-              <p class="text-muted mt-3"></p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card border-0 mb-4 position-relative position-relative">
-            <img
-              src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              class="card-img-top rounded-0"
-              alt="..."
-            />
-            <a href="#" class="text-dark"> </a>
-            <div class="card-body p-0">
-              <h4 class="mb-0 mt-3"><a href="#">Lorem ipsum</a></h4>
-              <p class="card-text mb-0">
-                NT$1,080 <span class="text-muted"><del>NT$1,200</del></span>
-              </p>
-              <p class="text-muted mt-3"></p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card border-0 mb-4 position-relative position-relative">
-            <img
-              src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              class="card-img-top rounded-0"
-              alt="..."
-            />
-            <a href="#" class="text-dark"> </a>
-            <div class="card-body p-0">
-              <h4 class="mb-0 mt-3"><a href="#">Lorem ipsum</a></h4>
-              <p class="card-text mb-0">
-                NT$1,080 <span class="text-muted"><del>NT$1,200</del></span>
-              </p>
-              <p class="text-muted mt-3"></p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card border-0 mb-4 position-relative position-relative">
-            <img
-              src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              class="card-img-top rounded-0"
-              alt="..."
-            />
-            <a href="#" class="text-dark"> </a>
-            <div class="card-body p-0">
-              <h4 class="mb-0 mt-3"><a href="#">Lorem ipsum</a></h4>
-              <p class="card-text mb-0">
-                NT$1,080 <span class="text-muted"><del>NT$1,200</del></span>
-              </p>
-              <p class="text-muted mt-3"></p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card border-0 mb-4 position-relative position-relative">
-            <img
-              src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-              class="card-img-top rounded-0"
-              alt="..."
-            />
-            <a href="#" class="text-dark"> </a>
-            <div class="card-body p-0">
-              <h4 class="mb-0 mt-3"><a href="#">Lorem ipsum</a></h4>
-              <p class="card-text mb-0">
-                NT$1,080 <span class="text-muted"><del>NT$1,200</del></span>
-              </p>
-              <p class="text-muted mt-3"></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>
+        {{ product.content }}
+      </p>
     </div>
   </div>
 </template>
