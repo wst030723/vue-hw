@@ -65,7 +65,7 @@
                     style="right: 16px; top: 16px"
                   ></i>
                 </a>
-                <div class="card-body p-0" style="background-color: #f2f1ed">
+                <div class="card-body p-0" style="background-color: #fef9f8">
                   <h4 class="mb-0 mt-3" style="text-align: center">
                     <RouterLink
                       :to="`/product/${product.id}`"

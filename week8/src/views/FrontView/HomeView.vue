@@ -104,7 +104,7 @@
       </div>
       <div class="col-md-4 m-auto text-center">
         <h4 class="mt-4" style="color: #673220">豆子的挑選</h4>
-        <p class="text-muted">
+        <p class="text-muted" style="letter-spacing: 2px">
           我們以挑選來自秘魯、哥倫比亞、危地馬拉等地的頂級咖啡豆為傲，每一杯Coyz的咖啡都是對豆子精挑細選的完美體現。
         </p>
       </div>
@@ -119,7 +119,7 @@
       </div>
       <div class="col-md-4 m-auto text-center">
         <h4 class="mt-4" style="color: #673220">好喝的關鍵</h4>
-        <p class="text-muted">
+        <p class="text-muted" style="letter-spacing: 2px">
           細心研磨，每顆豆子均勻細緻。輕輕搖晃，使咖啡粉均勻。用沸水浸泡，靜待數分鐘，品味獨特風味。
         </p>
       </div>
@@ -135,7 +135,7 @@
       </div>
       <div class="col-md-4 m-auto text-center">
         <h4 class="mt-4" style="color: #673220">拉花的技巧</h4>
-        <p class="text-muted">
+        <p class="text-muted" style="letter-spacing: 2px">
           精湛拉花技巧是我們的驕傲。手藝細膩，每一杯咖啡都是一幅獨一無二的藝術品。
         </p>
       </div>

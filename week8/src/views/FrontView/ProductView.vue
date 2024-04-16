@@ -54,44 +54,18 @@
       <div class="col-md-5">
         <h2 class="fw-bold h1 mb-1">{{ product.title }}</h2>
         <p class="pt-4">{{ product.description }}</p>
+        <p style="letter-spacing: 4px">{{ product.content }}</p>
+
         <p class="mb-0 text-muted text-end">
           <del>NT${{ product.origin_price }}</del>
         </p>
         <p class="h4 fw-bold text-end">NT${{ product.price }}</p>
         <div class="row align-items-center">
-          <div class="col-6">
-            <div class="input-group my-3 bg-light rounded">
-              <div class="input-group-prepend">
-                <button
-                  class="btn btn-outline-dark border-0 py-2"
-                  type="button"
-                  id="button-addon1"
-                >
-                  <i class="fas fa-minus"></i>
-                </button>
-              </div>
-              <input
-                type="text"
-                class="form-control border-0 text-center my-auto shadow-none bg-light"
-                placeholder=""
-                aria-label="Example text with button addon"
-                aria-describedby="button-addon1"
-                value="1"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-dark border-0 py-2"
-                  type="button"
-                  id="button-addon2"
-                >
-                  <i class="fas fa-plus"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+          <div class="col-6"></div>
           <div class="col-6">
             <a
-              class="text-nowrap btn btn-dark w-100 py-2"
+              class="text-nowrap btn w-100 py-2"
+              style="background-color: rgba(103, 50, 32, 0.6); color: #fff"
               @click.prevent="addToCart(product.id)"
               >加入購物車</a
             >
@@ -99,11 +73,7 @@
         </div>
       </div>
     </div>
-    <div class="row my-5">
-      <p>
-        {{ product.content }}
-      </p>
-    </div>
+    <div class="row my-5"></div>
   </div>
 </template>
 
@@ -132,18 +102,6 @@ export default {
         });
     },
     ...mapActions(cartStore, ["addToCart"]),
-    // addToCart(id) {
-    //   const order = {
-    //     product_id: id,
-    //     qty: 1,
-    //   };
-    //   axios
-    //     .post(`${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart`, { data: order })
-    //     .then((res) => {
-    //       console.log(res);
-    //       // this.product = res.data.product;
-    //     });
-    // },
   },
   mounted() {
     this.getProduct();

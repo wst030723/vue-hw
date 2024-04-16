@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg navbar-light position-fixed w-100 z-1 top-0"
+    class="navbar navbar-expand-lg navbar-light position-fixed w-100 z-3 top-0"
     :class="{ 'navbar-bg': isNavbarBg }"
   >
     <div class="container">
@@ -27,10 +27,13 @@
           <RouterLink class="nav-link me-4" style="color: #fff" to="/products"
             >產品介紹</RouterLink
           >
-          <RouterLink class="nav-link me-4" style="color: #fff" to="/"
+          <RouterLink class="nav-link me-4" style="color: #fff" to="/content"
             >門市資訊</RouterLink
           >
-          <RouterLink class="nav-item nav-link me-4 position-relative" to="/">
+          <RouterLink
+            class="nav-item nav-link me-4 position-relative"
+            to="/checkout"
+          >
             <i class="bi bi-cart3" style="color: #fff"></i>
             <span
               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
